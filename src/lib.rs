@@ -69,7 +69,7 @@ extern crate bitflags;
 pub mod native_cpuid {
     use crate::CpuIdResult;
 
-    #[cfg(all(target_arch = "x86", not(target_env = "sgx"), target_feature = "sse"))]
+    #[cfg(all(target_arch = "x86", not(target_env = "sgx")))]
     use core::arch::x86 as arch;
     #[cfg(all(target_arch = "x86_64", not(target_env = "sgx")))]
     use core::arch::x86_64 as arch;
