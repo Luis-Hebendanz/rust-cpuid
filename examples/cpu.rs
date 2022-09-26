@@ -1,6 +1,8 @@
 //! An example that displays the type/features/configuration of the CPU.
 extern crate raw_cpuid;
 
+#[allow(clippy::option_map_unit_fn)]
+
 fn main() {
     let cpuid = raw_cpuid::CpuId::new();
 

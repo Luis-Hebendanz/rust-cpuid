@@ -128,7 +128,7 @@ fn get_processor_limits() -> (u8, u8) {
 
         return (
             max_logical_processor_ids.try_into().unwrap(),
-            smt_max_cores_for_package.try_into().unwrap(),
+            smt_max_cores_for_package,
         );
     }
     // This is for Intel processors:

@@ -729,7 +729,7 @@ impl CpuId {
         // See https://github.com/gz/rust-cpuid/issues/52
         self.get_feature_info()
             .filter(|fi| fi.has_hypervisor())
-            .map(|_| {
+            .and_then(|_| {
                 let res = self.read.cpuid1(EAX_HYPERVISOR_INFO);
                 if res.eax > 0 {
                     Some(HypervisorInfo {
@@ -740,7 +740,6 @@ impl CpuId {
                     None
                 }
             })
-            .flatten()
     }
 
     /// Extended Processor and Processor Feature Identifiers (LEAF=0x8000_0001).
