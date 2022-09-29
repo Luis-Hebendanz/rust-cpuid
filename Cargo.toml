@@ -1,6 +1,6 @@
 [package]
 authors = ["Gerd Zellweger <mail@gerdzellweger.com>"]
-edition = "2018"
+edition = "2021"
 name = "raw-cpuid"
 version = "10.2.0"
 
@@ -22,6 +22,7 @@ required-features = ["cli"]
 serialize = ["serde", "serde_derive"]
 # This is not a library feature and should only be used to install the cpuid binary:
 cli = ["termimad", "clap", "serde_json", "serialize"]
+binary = []
 
 [dependencies]
 bitflags = "1.2"
